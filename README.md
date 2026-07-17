@@ -34,13 +34,13 @@ pengelolaan environment variable Vite, serta loading & error handling pada setia
 
 ```
 frontend-products/
-├── .env                      # VITE_API_URL=http://localhost:3000
+├── .env                      
 ├── src/
 │   ├── api/
-│   │   └── axiosInstance.js  # Axios instance + interceptor (request & response logging)
-│   ├── config.js             # API_URL diambil dari import.meta.env.VITE_API_URL
+│   │   └── axiosInstance.js  
+│   ├── config.js             
 │   ├── pages/
-│   │   └── TodoList.jsx      # Komponen utama aplikasi Todo
+│   │   └── TodoList.jsx      
 │   ├── App.jsx
 │   └── main.jsx
 ├── package.json
@@ -70,14 +70,13 @@ npm run start:dev
 # Berjalan di http://localhost:3000
 ```
 
-> Pastikan CORS sudah dikonfigurasi di `src/main.ts`:
+> CORS diaktifkan di `src/main.ts` dengan `app.enableCors();` (tanpa argumen, sehingga
+> mengizinkan seluruh *origin*), dan aplikasi berjalan pada *port* `3000`:
 > ```ts
-> app.enableCors({
->   origin: ['http://localhost:5173', 'http://localhost:5174'],
->   credentials: true,
->   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
->   allowedHeaders: ['Content-Type', 'Authorization'],
-> });
+> app.enableCors();
+>
+> const port = process.env.PORT || 3000;
+> await app.listen(port);
 > ```
 
 ### 2. Frontend (React — repo ini)
