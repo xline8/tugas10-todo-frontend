@@ -34,13 +34,13 @@ pengelolaan environment variable Vite, serta loading & error handling pada setia
 
 ```
 frontend-products/
-├── .env                      # VITE_API_URL=http://localhost:3000
+├── .env                      
 ├── src/
 │   ├── api/
-│   │   └── axiosInstance.js  # Axios instance + interceptor (request & response logging)
-│   ├── config.js             # API_URL diambil dari import.meta.env.VITE_API_URL
+│   │   └── axiosInstance.js  
+│   ├── config.js            
 │   ├── pages/
-│   │   └── TodoList.jsx      # Komponen utama aplikasi Todo
+│   │   └── TodoList.jsx     
 │   ├── App.jsx
 │   └── main.jsx
 ├── package.json
